@@ -1,44 +1,60 @@
-# Library Management System
+# Online Course Management System
 
 ## Overview
-The Library Management System is a Java-based application designed for university libraries to manage their book loan processes. It allows library staff to handle book inventories and provides functionalities for students to borrow and return books.
+
+The Online Course Management System is a Java-based application designed to simplify the management of educational courses in an online setting. It allows instructors to create, update, and manage courses, while students can enroll and participate in these courses.
 
 ## Features
-- Facilitate the borrowing and returning of books by students.
-- Manage book availability.
-- Register new students and track their borrowed books.
+
+- **Course Creation and Management:** Instructors can create new courses, update existing course details, and manage course offerings.
+- **Student Enrollment:** Students can enroll in courses and access course materials.
+- **Dynamic Course Catalog:** A list of available courses that students can browse and join.
 
 ## Getting Started
 
 ### Prerequisites
-- Java JDK 17 or higher.
-- Maven (for dependency management and running tests).
 
-### Installation
-1. Clone the repository:
+- Java JDK 11 or higher
+- Maven (for dependency management and running tests)
+
+### Installing and Running
+
+1. **Clone the repository:**
    ```
-   git clone https://github.com/YourUsername/LibraryManagementSystem.git
+   git clone https://github.com/EduPlatform/OnlineCourseManagement.git
    ```
-2. Navigate to the project directory:
+2. **Navigate to the project directory:**
    ```
-   cd LibraryManagementSystem
+   cd OnlineCourseManagement
    ```
-3. Compile the project:
+3. **Compile the project:**
    ```
    mvn compile
    ```
-
-### Running Tests
-Run the following command to execute the unit tests:
-```
-mvn test
-```
+4. **Run tests:**
+   ```
+   mvn test
+   ```
 
 ## Usage
-The system is mainly interacted with through the `LoanManager` class, which interfaces with a `CourseDatabase` to perform operations. See the sample usage in the `Main.java` class.
+
+The system is primarily used through its main classes `CourseManager` and `Instructor`. Here's a simple example of how to use the system:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        CourseDatabase db = new CourseDatabaseImpl();
+        CourseManager courseManager = new CourseManager(db);
+
+        // Create and manage courses, register students, etc.
+    }
+}
+```
 
 ## Contributing
-Contributions to the project are welcome! Please feel free to fork the repository and submit pull requests.
+
+Contributions to this project are welcome. If you find any bugs or have suggestions, please open an issue or submit a pull request.
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
